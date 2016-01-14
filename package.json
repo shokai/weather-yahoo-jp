@@ -1,0 +1,16 @@
+{
+  "name": "weather-yahoo-jp",
+  "version": "0.0.1",
+  "description": "get weather info from yahoo.co.jp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "weather",
+    "forecast",
+    "yahoo"
+  ],
+  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "license": "MIT"
+}
