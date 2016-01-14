@@ -1,10 +1,19 @@
 {
   "name": "weather-yahoo-jp",
   "version": "0.0.1",
+  "private": true,
   "description": "get weather info from yahoo.co.jp",
   "main": "index.js",
+  "engines": {
+    "node": ">= 5.2.0",
+    "npm": "3.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "mocha": "mocha test/test_*.es6 --compilers js:babel-register",
+    "eslint": "eslint *.es6 src/*.es6 test/*.es6",
+    "test": "npm run eslint && npm run mocha",
+    "build": "babel src/ --out-dir dist/ --source-maps inline",
+    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"(src|test)/*.es6\" -c \"npm run eslint\"'"
   },
   "keywords": [
     "weather",
@@ -12,5 +21,22 @@
     "yahoo"
   ],
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "cheerio": "^0.19.0",
+    "debug": "^2.2.0",
+    "lodash": "^4.0.0",
+    "superagent": "^1.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-3": "^6.3.13",
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^1.10.3",
+    "eslint-plugin-if-in-test": "^0.1.2",
+    "parallelshell": "^2.0.0"
+  }
 }
