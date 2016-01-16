@@ -3,4 +3,5 @@ machine:
     version: 5.2
 test:
   override:
+    - npm run build
     - npm run test
