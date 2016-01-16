@@ -3,7 +3,7 @@
 
 import "./test_helper";
 import assert from "assert";
-import Weather from "../src/"
+import Weather from "../src/";
 
 
 describe("yolp", function(){
