@@ -4,6 +4,14 @@ Node.js library for getting weather info from yahoo.co.jp
 - https://github.com/shokai/weather-yahoo-jp
 - https://npmjs.com/package/weather-yahoo-jp
 
+[![Circle CI](https://circleci.com/gh/shokai/weather-yahoo-jp.svg?style=svg)](https://circleci.com/gh/shokai/weather-yahoo-jp)
+
+## Install
+
+    % npm i weather-yahoo-jp
+
+
+
 ## YOLP API
 
 - http://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/weather.html
@@ -13,8 +21,10 @@ Node.js library for getting weather info from yahoo.co.jp
 - get APP-ID
 - https://e.developer.yahoo.co.jp/register
 
-    % export YAHOO_APPID=a1b2cdef3456jkluiop
 
+### Run
+
+    % export YAHOO_APPID=a1b2cdef3456jkluiop
 
 ```javascript
 var Weather = require("weather-yahoo-jp");
