@@ -23,9 +23,10 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.2.0",
+    "cheerio": "*",
+    "debug": "*",
     "lodash": "^4.0.0",
-    "superagent": "^1.6.1"
+    "superagent": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
