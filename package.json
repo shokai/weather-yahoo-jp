@@ -11,7 +11,7 @@
   "scripts": {
     "mocha": "mocha test/test_*.es6 --compilers js:babel-register",
     "eslint": "eslint *.es6 src/*.es6 test/*.es6",
-    "test": "npm run eslint",
+    "test": "npm run eslint && npm run mocha",
     "build": "babel src/ --out-dir lib/ --source-maps inline",
     "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"(src|test)/*.es6\" -c \"npm run eslint\"'"
   },
