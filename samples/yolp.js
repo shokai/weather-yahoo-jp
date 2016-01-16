@@ -32,7 +32,7 @@ yolp.getWeather(query)
           console.log(where + "は雨は降っていません");
         }
         else{
-          console.log(where + "は雨は降っていませんが、もうすぐ降ります" + w.forecast[0].rain);
+          console.log(where + "は雨は降っていませんが、もうすぐ降ります:" + w.forecast[0].rain);
         }
       }
     }
