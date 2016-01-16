@@ -29,7 +29,10 @@ export default class Forecast{
 
   parse(html){
     const $ = cheerio.load(html);
+    var pref = $("#cat-pass a").eq(-1).text();
+    var city = $("title").text().replace(/\s*の天気.+$/, "");
     return {
+      where: `${pref} ${city}`,
       today: {
         text: $(".forecastCity .pict").eq(0).text(),
         temperature: {

@@ -21,6 +21,7 @@ describe("Forecast", function(){
       return forecast
         .get("http://weather.yahoo.co.jp/weather/jp/13/4410.html")
         .then((forecast) => {
+          assert.equal(typeof forecast.where, "string");
           assert.equal(typeof forecast.today.text, "string");
           assert.equal(typeof forecast.today.temperature.high, "number");
           assert.equal(typeof forecast.today.temperature.low, "number");
