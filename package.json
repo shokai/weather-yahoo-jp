@@ -1,7 +1,7 @@
 {
   "name": "weather-yahoo-jp",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "description": "get weather info from yahoo.co.jp",
   "main": "lib/index.js",
   "engines": {
