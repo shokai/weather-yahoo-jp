@@ -11,25 +11,56 @@ Node.js library for getting weather info from yahoo.co.jp
     % npm i weather-yahoo-jp
 
 
+## Samples
 
-## YOLP API
-
-- http://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/weather.html
-
-### Register Your App
-
-- get APP-ID
-- https://e.developer.yahoo.co.jp/register
+see [samples directory](https://github.com/shokai/weather-yahoo-jp/tree/master/samples)
 
 
-### Run
+## Usage
 
-    % export YAHOO_APPID=a1b2cdef3456jkluiop
+### Forcast
+get forecast info from webpage
+
+    % node samples/forecast.js
 
 ```javascript
-var Weather = require("weather-yahoo-jp");
+var Forecast = require("weather-yahoo-jp").Forecast;
+var forecast = new Weather.Forecast();
 
-var yolp = new Weather.YOLP(process.env.YAHOO_APPID);
+forecast
+  .get("http://weather.yahoo.co.jp/weather/jp/14/4610.html")
+  .then((forecast) => {
+    console.log(forecast);
+  })
+  .catch((err) => {
+    console.error(err.stack || err);
+  });
+```
+
+```javascript
+{
+  where: '神奈川県 東部（横浜）',
+  today: { text: '曇後雨', temperature: { high: 9, low: 4 } },
+  tomorrow: { text: '雨後曇', temperature: { high: 8, low: 3 } }
+}
+```
+
+
+### YOLP
+
+- [Yahoo Open Local Platform 気象情報API](http://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/weather.html)
+- [Register Your App to get APP-ID](https://e.developer.yahoo.co.jp/register)
+
+
+Run
+
+    % export YAHOO_APPID=a1b2cdef3456jkluiop
+    % node samples/yolp.js
+
+
+```javascript
+var Yolp = require("weather-yahoo-jp").Yolp;
+var yolp = new Yolp(process.env.YAHOO_APPID);
 
 var query = {
   coordinates: {
@@ -66,3 +97,22 @@ yolp.getWeather(query)
     console.error(err.stack || err);
   });
 ```
+
+```
+東京は雨は降っていません
+京都は雨は降っていませんが、もうすぐ降ります:0.65
+沖縄は雨は降っていません
+新潟は雨が降っていますが、もうすぐ止みます:0.55
+```
+
+
+## Develop
+
+    % npm i
+    % npm run build
+    % npm run watch
+
+## Test
+
+    % npm test
+    % DEBUG=weather* npm test
