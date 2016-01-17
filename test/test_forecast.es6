@@ -2,7 +2,7 @@
 "use strict";
 
 import "./test_helper";
-import assert from "assert";
+import {assert} from "chai";
 import {Forecast} from "../src/";
 
 
@@ -11,7 +11,7 @@ describe("Forecast", function(){
   const forecast = new Forecast();
 
   it("should have method \"get\"", function(){
-    assert.equal(typeof forecast["get"], "function");
+    assert.isFunction(forecast["get"]);
   });
 
   describe("method \"get\"", function(){
@@ -21,13 +21,14 @@ describe("Forecast", function(){
       return forecast
         .get("http://weather.yahoo.co.jp/weather/jp/14/4610.html")
         .then((forecast) => {
-          assert(/神奈川県.+横浜/.test(forecast.where));
-          assert.equal(typeof forecast.today.text, "string");
-          assert.equal(typeof forecast.today.temperature.high, "number");
-          assert.equal(typeof forecast.today.temperature.low, "number");
-          assert.equal(typeof forecast.tomorrow.text, "string");
-          assert.equal(typeof forecast.tomorrow.temperature.high, "number");
-          assert.equal(typeof forecast.tomorrow.temperature.low, "number");
+          assert.isString(forecast.where);
+          assert.match(forecast.where, /神奈川県.+横浜/);
+          assert.isString(forecast.today.text);
+          assert.isNumber(forecast.today.temperature.high);
+          assert.isNumber(forecast.today.temperature.low);
+          assert.isString(forecast.tomorrow.text);
+          assert.isNumber(forecast.tomorrow.temperature.high);
+          assert.isNumber(forecast.tomorrow.temperature.low);
         });
     });
 

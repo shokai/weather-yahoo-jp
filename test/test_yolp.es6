@@ -2,7 +2,7 @@
 "use strict";
 
 import "./test_helper";
-import assert from "assert";
+import {assert} from "chai";
 import {Yolp} from "../src/";
 
 
@@ -11,7 +11,7 @@ describe("yolp", function(){
   const yolp = new Yolp(process.env.YAHOO_APPID);
 
   it("should have method \"getWeather\"", function(){
-    assert.equal(typeof yolp["getWeather"], "function");
+    assert.isFunction(yolp["getWeather"]);
   });
 
   describe("method \"getWeather\"", function(){
@@ -31,16 +31,16 @@ describe("yolp", function(){
       return yolp
         .getWeather(query)
         .then((data) => {
-          assert.equal(Object.keys(data).length,  4);
+          assert.lengthOf(Object.keys(data), 4);
           for(let where in data){
             let weather = data[where];
-            assert.equal(typeof weather.geo.latitude, "number");
-            assert.equal(typeof weather.geo.longitude, "number");
-            assert.equal(typeof weather.observation.rain, "number"); // observation
-            assert(weather.observation.date instanceof Date);
-            assert(weather.forecast instanceof Array); // forecast
-            assert.equal(typeof weather.forecast[0].rain, "number");
-            assert(weather.forecast[0].date instanceof Date);
+            assert.isNumber(weather.geo.latitude);
+            assert.isNumber(weather.geo.longitude);
+            assert.isNumber(weather.observation.rain); // observation
+            assert.instanceOf(weather.observation.date, Date);
+            assert.isArray(weather.forecast); // forecast
+            assert.isNumber(weather.forecast[0].rain);
+            assert.instanceOf(weather.forecast[0].date, Date);
           }
         });
     });
