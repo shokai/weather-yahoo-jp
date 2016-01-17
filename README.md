@@ -75,18 +75,18 @@ yolp.getWeather(query)
       var w = data[where];
       if(w.observation.rain > 0){
         if(w.forecast[0].rain > 0){
-          console.log(where + "は雨が降っています:" + w.observation.rain);
+          console.log(where + "は雨が" + w.observation.rain + "降っています");
         }
         else{
-          console.log(where + "は雨が降っていますが、もうすぐ止みます:" + w.observation.rain);
+          console.log(where + "でもうすぐ雨が止みます");
         }
       }
       else{
         if(w.forecast[0].rain === 0){
-          console.log(where + "は雨は降っていません");
+          console.log(where + "は雨が降っていません");
         }
         else{
-          console.log(where + "は雨は降っていませんが、もうすぐ降ります:" + w.forecast[0].rain);
+          console.log(where + "でもうすぐ雨が" + w.forecast[0].rain + "降ります");
         }
       }
     }
@@ -97,10 +97,10 @@ yolp.getWeather(query)
 ```
 
 ```
-東京は雨は降っていません
-京都は雨は降っていませんが、もうすぐ降ります:0.65
-沖縄は雨は降っていません
-新潟は雨が降っていますが、もうすぐ止みます:0.55
+東京でもうすぐ雨が止みます
+京都でもうすぐ雨が0.25降ります
+沖縄は雨が1.65降っています
+新潟は雨が降っていません
 ```
 
 

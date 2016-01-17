@@ -22,18 +22,18 @@ yolp.getWeather(query)
       var w = data[where];
       if(w.observation.rain > 0){
         if(w.forecast[0].rain > 0){
-          console.log(where + "は雨が降っています:" + w.observation.rain);
+          console.log(where + "は雨が" + w.observation.rain + "降っています");
         }
         else{
-          console.log(where + "は雨が降っていますが、もうすぐ止みます:" + w.observation.rain);
+          console.log(where + "でもうすぐ雨が止みます");
         }
       }
       else{
         if(w.forecast[0].rain === 0){
-          console.log(where + "は雨は降っていません");
+          console.log(where + "は雨が降っていません");
         }
         else{
-          console.log(where + "は雨は降っていませんが、もうすぐ降ります:" + w.forecast[0].rain);
+          console.log(where + "でもうすぐ雨が" + w.forecast[0].rain + "降ります");
         }
       }
     }
