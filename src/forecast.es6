@@ -3,13 +3,26 @@
 const debug = require("debug")("weather-yahoo-jp:forecast");
 import superagent from "superagent";
 import cheerio from "cheerio";
+import _ from "lodash";
+
+import forecastUrl from "../forecast-url.json";
+
+function findForecastUrl(name){
+  var where = _.find(Object.keys(forecastUrl), (where) => {
+    return where.indexOf(`（${name}）`) > -1;
+  });
+  if(where) return forecastUrl[where];
+  where = _.maxBy(Object.keys(forecastUrl), (where) => {
+    return where.indexOf(name);
+  });
+  if(where.indexOf(name) < 0) throw `forecast URL for "${name}" not exists`;
+  return forecastUrl[where];
+}
 
 export default class Forecast{
-  constructor(){
 
-  }
-
-  get(url){
+  get(url_or_name){
+    var url = /^https?:\/\/.+/.test(url_or_name) ? url_or_name : findForecastUrl(url_or_name);
     return this.getHtml(url)
       .then(this.parse)
       .then((data) => {
@@ -17,7 +30,6 @@ export default class Forecast{
         return data;
       });
   }
-
 
   getHtml(url){
     return new Promise((resolve, reject) => {

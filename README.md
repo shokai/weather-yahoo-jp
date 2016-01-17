@@ -23,10 +23,10 @@ get forecast from webpage
 
 ```javascript
 var Forecast = require("weather-yahoo-jp").Forecast;
-var forecast = new Weather.Forecast();
+var forecast = new Forecast();
 
 forecast
-  .get("http://weather.yahoo.co.jp/weather/jp/14/4610.html")
+  .get("京都")
   .then((forecast) => {
     console.log(forecast);
   })
