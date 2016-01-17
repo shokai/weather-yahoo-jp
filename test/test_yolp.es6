@@ -3,12 +3,12 @@
 
 import "./test_helper";
 import assert from "assert";
-import Weather from "../src/";
+import {Yolp} from "../src/";
 
 
 describe("yolp", function(){
 
-  const yolp = new Weather.YOLP(process.env.YAHOO_APPID);
+  const yolp = new Yolp(process.env.YAHOO_APPID);
 
   it("should have method \"getWeather\"", function(){
     assert.equal(typeof yolp["getWeather"], "function");

@@ -1,9 +1,9 @@
 "use strict";
 
-import YOLP from "./yolp";
+import Yolp from "./yolp";
 import Forecast from "./forecast";
 
 module.exports = {
-  YOLP: YOLP,
+  Yolp: Yolp,
   Forecast: Forecast
 };

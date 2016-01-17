@@ -1,10 +1,11 @@
 "use strict";
 
-// var Weather = require("weather-yahoo-jp");
-var path = require("path");
-var Weather = require(path.resolve());
+// var Yolp = require("weather-yahoo-jp").Yolp;
 
-var yolp = new Weather.YOLP(process.env.YAHOO_APPID);
+var path = require("path");
+var Yolp = require(path.resolve()).Yolp;
+
+var yolp = new Yolp(process.env.YAHOO_APPID);
 
 var query = {
   coordinates: {

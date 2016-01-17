@@ -3,12 +3,12 @@
 
 import "./test_helper";
 import assert from "assert";
-import Weather from "../src/";
+import {Forecast} from "../src/";
 
 
 describe("Forecast", function(){
 
-  const forecast = new Weather.Forecast();
+  const forecast = new Forecast();
 
   it("should have method \"get\"", function(){
     assert.equal(typeof forecast["get"], "function");
