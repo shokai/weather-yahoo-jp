@@ -19,9 +19,7 @@ see [samples directory](https://github.com/shokai/weather-yahoo-jp/tree/master/s
 ## Usage
 
 ### Forcast
-get forecast info from webpage
-
-    % node samples/forecast.js
+get forecast from webpage
 
 ```javascript
 var Forecast = require("weather-yahoo-jp").Forecast;
@@ -48,14 +46,14 @@ forecast
 
 ### YOLP
 
-- [Yahoo Open Local Platform 気象情報API](http://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/weather.html)
-- [Register Your App to get APP-ID](https://e.developer.yahoo.co.jp/register)
+- Yahoo Open Local Platform 気象情報API
+- http://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/weather.html
 
 
-Run
+[Register Your App](https://e.developer.yahoo.co.jp/register) to get APPID
+
 
     % export YAHOO_APPID=a1b2cdef3456jkluiop
-    % node samples/yolp.js
 
 
 ```javascript
