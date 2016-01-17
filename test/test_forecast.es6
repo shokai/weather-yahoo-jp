@@ -19,9 +19,9 @@ describe("Forecast", function(){
     it("should return Forecast", function(){
       this.timeout(10000);
       return forecast
-        .get("http://weather.yahoo.co.jp/weather/jp/13/4410.html")
+        .get("http://weather.yahoo.co.jp/weather/jp/14/4610.html")
         .then((forecast) => {
-          assert.equal(typeof forecast.where, "string");
+          assert(/神奈川県.+横浜/.test(forecast.where));
           assert.equal(typeof forecast.today.text, "string");
           assert.equal(typeof forecast.today.temperature.high, "number");
           assert.equal(typeof forecast.today.temperature.low, "number");
