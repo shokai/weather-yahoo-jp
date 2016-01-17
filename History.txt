@@ -1,3 +1,7 @@
+=== 0.1.0 2016-01-17
+
+* implemented Forecast API  #2
+
 === 0.0.1 2016-01-16
 
-* implemented YOLP API
+* implemented YOLP API  #1
