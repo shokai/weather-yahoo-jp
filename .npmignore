@@ -1,4 +1,8 @@
 src/
+test/
 samples/
 tmp/
 circle.yml
+.babelrc
+.eslintrc
+*.log
