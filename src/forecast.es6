@@ -11,7 +11,11 @@ export default class Forecast{
 
   get(url){
     return this.getHtml(url)
-      .then(this.parse);
+      .then(this.parse)
+      .then((data) => {
+        data.url = url;
+        return data;
+      });
   }
 
 
