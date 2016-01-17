@@ -23,6 +23,7 @@ describe("Forecast", function(){
         .then((forecast) => {
           assert.isString(forecast.where);
           assert.match(forecast.where, /神奈川県.+横浜/);
+          assert.match(forecast.url, /^https?:\/\/weather\.yahoo\.co\.jp.+/);
           assert.isString(forecast.today.text);
           assert.isNumber(forecast.today.temperature.high);
           assert.isNumber(forecast.today.temperature.low);
