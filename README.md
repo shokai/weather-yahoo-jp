@@ -25,7 +25,7 @@ get forecast from webpage
 var forecast = require("weather-yahoo-jp").forecast;
 
 forecast
-  .get("京都")
+  .get("横浜")
   .then((forecast) => {
     console.log(forecast);
   })
@@ -38,7 +38,8 @@ forecast
 {
   where: '神奈川県 東部（横浜）',
   today: { text: '曇後雨', temperature: { high: 9, low: 4 } },
-  tomorrow: { text: '雨後曇', temperature: { high: 8, low: 3 } }
+  tomorrow: { text: '晴れ', temperature: { high: 8, low: 3 } },
+  url: 'http://weather.yahoo.co.jp/weather/jp/14/4610.html'
 }
 ```
 
