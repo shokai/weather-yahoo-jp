@@ -3,12 +3,10 @@
 
 import "./test_helper";
 import {assert} from "chai";
-import {Forecast} from "../src/";
+import {forecast} from "../src/";
 
 
 describe("Forecast", function(){
-
-  const forecast = new Forecast();
 
   it("should have method \"get\"", function(){
     assert.isFunction(forecast["get"]);
