@@ -22,8 +22,7 @@ see [samples directory](https://github.com/shokai/weather-yahoo-jp/tree/master/s
 get forecast from webpage
 
 ```javascript
-var Forecast = require("weather-yahoo-jp").Forecast;
-var forecast = new Forecast();
+var forecast = require("weather-yahoo-jp").forecast;
 
 forecast
   .get("京都")

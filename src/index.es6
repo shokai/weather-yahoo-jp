@@ -5,5 +5,5 @@ import Forecast from "./forecast";
 
 module.exports = {
   Yolp: Yolp,
-  Forecast: Forecast
+  forecast: new Forecast()
 };
