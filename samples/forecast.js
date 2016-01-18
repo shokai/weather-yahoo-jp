@@ -6,9 +6,10 @@ var path = require("path");
 var Forecast = require(path.resolve()).Forecast;
 
 var forecast = new Forecast();
+var where = process.argv[2] || "横浜";
 
 forecast
-  .get("http://weather.yahoo.co.jp/weather/jp/14/4610.html")
+  .get(where)
   .then((forecast) => {
     console.log(forecast);
     console.log(forecast.today.text);
