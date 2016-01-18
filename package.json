@@ -42,5 +42,16 @@
     "eslint-plugin-if-in-test": "^0.1.2",
     "mocha": "^2.3.4",
     "parallelshell": "^2.0.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shokai/weather-yahoo-jp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shokai/weather-yahoo-jp/issues"
+  },
+  "homepage": "https://github.com/shokai/weather-yahoo-jp#readme"
 }
