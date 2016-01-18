@@ -3,17 +3,16 @@
 "use strict";
 
 import Promise from "bluebird";
-import {Forecast} from "../src/"
+import {forecast} from "../src/"
 import co from "co";
 import cheerio from "cheerio";
 import superagent from "superagent";
 import _ from "lodash";
 
 const fs = Promise.promisifyAll(require("fs"));
-const forecast = new Forecast();
 
-const fname = process.argv[2];
-console.log(`output file name: ${fname}`);
+const fname = process.argv[2] || "forecast-url.json";
+console.log(`output file => ${fname}`);
 
 co(function *(){
   var result = {};
