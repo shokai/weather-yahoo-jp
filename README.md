@@ -110,7 +110,15 @@ yolp.getWeather(query)
     % npm run build
     % npm run watch
 
-## Test
+### Test
 
     % npm test
     % DEBUG=weather* npm test
+
+### Build forecast-url.json
+
+    % npm run build:urllist
+
+## Note
+
+- [橋本商会 » Node.jsでYahooから天気予報とリアルタイム降雨データを取得する](http://shokai.org/blog/archives/10542)
