@@ -1,3 +1,7 @@
+=== 0.2.1 2016-01-24
+
+* add date and temperature diff in each forecast  #4 #5
+
 === 0.2.0 2016-01-18
 
 * get forecast by place name  #2
