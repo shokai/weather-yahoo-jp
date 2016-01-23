@@ -37,8 +37,16 @@ forecast
 ```javascript
 {
   where: '神奈川県 東部（横浜）',
-  today: { text: '曇後雨', temperature: { high: 9, low: 4 } },
-  tomorrow: { text: '晴れ', temperature: { high: 8, low: 3 } },
+  today: {
+    text: '晴後曇',
+    temperature: { high: 7, low: 2, highDiff: 0, lowDiff: -1 },
+    date: Sun Jan 24 2016 00:00:00 GMT+0900 (JST)
+  },
+  tomorrow: {
+    text: '晴時々曇',
+    temperature: { high: 8, low: 1, highDiff: 1, lowDiff: -1 },
+    date: Mon Jan 25 2016 00:00:00 GMT+0900 (JST)
+  },
   url: 'http://weather.yahoo.co.jp/weather/jp/14/4610.html'
 }
 ```
