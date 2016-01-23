@@ -19,16 +19,8 @@ describe("Forecast", function(){
       return forecast
         .get("http://weather.yahoo.co.jp/weather/jp/14/4610.html")
         .then((forecast) => {
-          assert.isString(forecast.where);
+          assert.isForecast(forecast);
           assert.match(forecast.where, /神奈川県.+横浜/);
-          assert.match(forecast.url, /^https?:\/\/weather\.yahoo\.co\.jp.+/);
-          assert.isString(forecast.today.text);
-          assert.isNumber(forecast.today.temperature.high);
-          assert.isNumber(forecast.today.temperature.low);
-          assert(forecast.today.temperature.high >= forecast.today.temperature.low);
-          assert.isString(forecast.tomorrow.text);
-          assert.isNumber(forecast.tomorrow.temperature.high);
-          assert.isNumber(forecast.tomorrow.temperature.low);
         });
     });
 
@@ -37,16 +29,8 @@ describe("Forecast", function(){
       return forecast
         .get("京都")
         .then((forecast) => {
-          assert.isString(forecast.where);
+          assert.isForecast(forecast);
           assert.match(forecast.where, /京都府.+京都/);
-          assert.match(forecast.url, /^https?:\/\/weather\.yahoo\.co\.jp.+/);
-          assert.isString(forecast.today.text);
-          assert.isNumber(forecast.today.temperature.high);
-          assert.isNumber(forecast.today.temperature.low);
-          assert(forecast.today.temperature.high >= forecast.today.temperature.low);
-          assert.isString(forecast.tomorrow.text);
-          assert.isNumber(forecast.tomorrow.temperature.high);
-          assert.isNumber(forecast.tomorrow.temperature.low);
         });
     });
 
