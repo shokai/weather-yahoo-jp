@@ -47,6 +47,11 @@ export default class Forecast{
     const $ = cheerio.load(html);
     var pref = $("#cat-pass a").eq(-1).text();
     var city = $("title").text().replace(/\s*の天気.+$/, "");
+    var year = new Date().getFullYear();
+    var m = $(".forecastCity .date").eq(0).text().match(/(\d+)月(\d+)日/);
+    var today = new Date(year, m[1] - 1, m[2]);
+    m = $(".forecastCity .date").eq(1).text().match(/(\d+)月(\d+)日/);
+    var tomorrow = new Date(year, m[1] - 1, m[2]);
     return {
       where: `${pref} ${city}`,
       today: {
@@ -54,14 +59,16 @@ export default class Forecast{
         temperature: {
           high: $(".forecastCity .temp .high em").eq(0).text() - 0,
           low: $(".forecastCity .temp .low em").eq(0).text() - 0
-        }
+        },
+        date: today
       },
       tomorrow: {
         text: $(".forecastCity .pict").eq(1).text(),
         temperature: {
           high: $(".forecastCity .temp .high em").eq(1).text() - 0,
           low:  $(".forecastCity .temp .low em").eq(1).text() - 0
-        }
+        },
+        date: tomorrow
       }
     }
   }
