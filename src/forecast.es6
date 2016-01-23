@@ -57,16 +57,20 @@ export default class Forecast{
       today: {
         text: $(".forecastCity .pict").eq(0).text(),
         temperature: {
-          high: $(".forecastCity .temp .high em").eq(0).text() - 0,
-          low: $(".forecastCity .temp .low em").eq(0).text() - 0
+          high: parseInt($(".forecastCity .temp .high em").eq(0).text()),
+          low:  parseInt($(".forecastCity .temp .low em").eq(0).text()),
+          highDiff: parseInt($(".forecastCity .temp .high").eq(0).text().match(/\[(.+)\]/)[1]),
+          lowDiff:  parseInt($(".forecastCity .temp .low").eq(0).text().match(/\[(.+)\]/)[1])
         },
         date: today
       },
       tomorrow: {
         text: $(".forecastCity .pict").eq(1).text(),
         temperature: {
-          high: $(".forecastCity .temp .high em").eq(1).text() - 0,
-          low:  $(".forecastCity .temp .low em").eq(1).text() - 0
+          high: parseInt($(".forecastCity .temp .high em").eq(1).text()),
+          low:  parseInt($(".forecastCity .temp .low em").eq(1).text()),
+          highDiff: parseInt($(".forecastCity .temp .high").eq(1).text().match(/\[(.+)\]/)[1]),
+          lowDiff:  parseInt($(".forecastCity .temp .low").eq(1).text().match(/\[(.+)\]/)[1])
         },
         date: tomorrow
       }
