@@ -1,6 +1,10 @@
 machine:
   node:
     version: 5.4
+dependencies:
+  override:
+    - npm i
+    - bin/run-each-packages npm i
 test:
   override:
     - npm run build
