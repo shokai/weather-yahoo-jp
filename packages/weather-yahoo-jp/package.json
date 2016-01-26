@@ -5,7 +5,7 @@
   "description": "get weather info from yahoo.co.jp",
   "main": "lib/index.js",
   "engines": {
-    "node": ">= 5.2.0",
+    "node": ">= 5.4",
     "npm": "3.x"
   },
   "scripts": {
@@ -53,5 +53,5 @@
   "bugs": {
     "url": "https://github.com/shokai/weather-yahoo-jp/issues"
   },
-  "homepage": "https://github.com/shokai/weather-yahoo-jp#readme"
+  "homepage": "https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp#readme"
 }

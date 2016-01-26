@@ -1,6 +1,7 @@
 {
   "name": "weather-yahoo-jp-cli",
   "version": "0.2.3",
+  "private": false,
   "description": "CLI tool for weather-yahoo-jp",
   "engines": {
     "node": ">= 5.4",
@@ -35,5 +36,13 @@
     "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "parallelshell": "^2.0.0"
-  }
+  },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shokai/weather-yahoo-jp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shokai/weather-yahoo-jp/issues"
+  },
+  "homepage": "https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp-cli#readme"
 }

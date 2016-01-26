@@ -1,9 +1,9 @@
 # weather-yahoo-jp-cli
 CLI tool for [weather-yahoo-jp](https://www.npmjs.com/package/weather-yahoo-jp)
 
-- https://github.com/shokai/weather-yahoo-jp-cli
+- https://npmjs.com/package/weather-yahoo-jp-cli
 
-[![Circle CI](https://circleci.com/gh/shokai/weather-yahoo-jp-cli.svg?style=svg)](https://circleci.com/gh/shokai/weather-yahoo-jp-cli)
+[![Circle CI](https://circleci.com/gh/shokai/weather-yahoo-jp.svg?style=svg)](https://circleci.com/gh/shokai/weather-yahoo-jp)
 
 
 ## Install

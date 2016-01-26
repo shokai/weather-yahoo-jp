@@ -13,7 +13,7 @@ Node.js library for getting weather info from yahoo.co.jp
 
 ## Samples
 
-see [samples directory](https://github.com/shokai/weather-yahoo-jp/tree/master/samples)
+see [samples directory](https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp/samples)
 
 
 ## Usage
