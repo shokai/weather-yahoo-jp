@@ -1,57 +1,21 @@
 {
-  "name": "weather-yahoo-jp",
-  "version": "0.2.1",
-  "private": false,
-  "description": "get weather info from yahoo.co.jp",
-  "main": "lib/index.js",
-  "engines": {
-    "node": ">= 5.2.0",
-    "npm": "3.x"
-  },
-  "scripts": {
-    "mocha": "mocha test/test_*.es6 --compilers js:babel-register",
-    "eslint": "eslint *.es6 src/*.es6 test/*.es6 tool/*.es6",
-    "test": "npm run eslint && npm run mocha",
-    "build": "babel src/ --out-dir lib/ --source-maps inline",
-    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"(src|test|tool)/*.es6\" -c \"npm run eslint\"'",
-    "build:urllist": "babel-node tool/create-forecast-url-list.es6 forecast-url.json"
-  },
-  "keywords": [
-    "weather",
-    "forecast",
-    "yahoo"
-  ],
-  "author": "Sho Hashimoto <hashimoto@shokai.org>",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "cheerio": "*",
-    "debug": "*",
-    "lodash": "^4.0.0",
-    "superagent": "*"
+    "lerna": "^1.1.0"
   },
-  "devDependencies": {
-    "babel-cli": "^6.4.0",
-    "babel-eslint": "^4.1.6",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-stage-3": "^6.3.13",
-    "bluebird": "^3.1.1",
-    "chai": "^3.4.1",
-    "chokidar-cli": "^1.2.0",
-    "co": "^4.6.0",
-    "eslint": "^1.10.3",
-    "eslint-plugin-if-in-test": "^0.1.2",
-    "mocha": "^2.3.4",
-    "parallelshell": "^2.0.0"
-  },
-  "directories": {
-    "test": "test"
+  "name": "weather-yahoo-jp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shokai/weather-yahoo-jp.git"
   },
+  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/shokai/weather-yahoo-jp/issues"
   },
-  "homepage": "https://github.com/shokai/weather-yahoo-jp#readme"
+  "homepage": "https://github.com/shokai/weather-yahoo-jp#readme",
+  "description": "get weather info from yahoo.co.jp"
 }
