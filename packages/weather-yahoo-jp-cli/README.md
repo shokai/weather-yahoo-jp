@@ -8,7 +8,7 @@ CLI tool for [weather-yahoo-jp](https://www.npmjs.com/package/weather-yahoo-jp)
 
 ## Install
 
-    % npm i shokai/weather-yahoo-jp-cli -g
+    % npm i weather-yahoo-jp-cli -g
 
 
 ## Usage
