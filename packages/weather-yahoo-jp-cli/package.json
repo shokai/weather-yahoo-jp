@@ -1,6 +1,6 @@
 {
   "name": "weather-yahoo-jp-cli",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "description": "CLI tool for weather-yahoo-jp",
   "engines": {
@@ -27,7 +27,7 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "date-utils": "*",
-    "weather-yahoo-jp": "^0.2.2"
+    "weather-yahoo-jp": "^0.2.4"
   },
   "devDependencies": {
     "babel-cli": "^6.4.5",
@@ -37,7 +37,7 @@
     "eslint": "^1.10.3",
     "parallelshell": "^2.0.0"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/shokai/weather-yahoo-jp.git"
   },
