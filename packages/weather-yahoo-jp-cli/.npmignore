@@ -6,3 +6,4 @@ circle.yml
 .babelrc
 .eslintrc
 *.log
+*.log.*
