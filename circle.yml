@@ -1,7 +1,7 @@
 machine:
   node:
-    version: 5.2
+    version: 5.4
 test:
   override:
-    - npm run build
-    - npm run test
+    - ./bin/run-each-packages npm run build
+    - ./bin/run-each-packages npm run test

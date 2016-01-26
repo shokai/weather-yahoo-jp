@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+"use strict";
+
+var path = require("path");
+var fs = require("fs");
+var exec = require("child_process").exec;
+var async = require("async");
+
+var pkgs = fs.readdirSync(path.resolve(__dirname + "/../packages/"));
+
+var cmd = process.argv.slice(2).join(' ');
+
+console.log("command:  " + cmd);
+console.log("packages: " + JSON.stringify(pkgs));
+
+if(cmd.length < 1) process.exit(0);
+
+async.eachSeries(pkgs, function(pkg, next){
+
+  var pkgdir = path.resolve(__dirname + "/../packages", pkg);
+  console.log("=== " + pkgdir + " ===");
+  var _exec = exec(cmd, {cwd: pkgdir}, next);
+  _exec.stdout.on("data", function(data){
+    process.stdout.write(data);
+  });
+
+}, function(err, res){
+  if(err) console.error(err);
+});
