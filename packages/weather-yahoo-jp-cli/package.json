@@ -13,8 +13,7 @@
   "scripts": {
     "test": "eslint *.es6 src/*.es6 bin/*.js",
     "build": "babel src/ --out-dir lib/ --source-maps inline",
-    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"src/*.es6\" -c \"npm run test\"'",
-    "postinstall": "npm run build"
+    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"src/*.es6\" -c \"npm run test\"'"
   },
   "keywords": [
     "weather",
@@ -25,14 +24,14 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "dependencies": {
-    "babel-cli": "^6.4.5",
-    "babel-preset-es2015": "^6.3.13",
     "chalk": "^1.1.1",
     "date-utils": "*",
-    "weather-yahoo-jp": "*"
+    "weather-yahoo-jp": "^0.2.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.4.5",
     "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
     "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "parallelshell": "^2.0.0"
