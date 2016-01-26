@@ -3,5 +3,5 @@ machine:
     version: 5.4
 test:
   override:
-    - ./bin/run-each-packages npm run build
-    - ./bin/run-each-packages npm run test
+    - npm run build
+    - npm run test
