@@ -1,0 +1,40 @@
+{
+  "name": "weather-yahoo-jp-cli",
+  "version": "0.0.1",
+  "description": "CLI tool for weather-yahoo-jp",
+  "engines": {
+    "node": ">= 5.4",
+    "npm": "3.x"
+  },
+  "main": "lib/main.js",
+  "bin": {
+    "weather-yahoo-jp": "bin/cli.js"
+  },
+  "scripts": {
+    "test": "eslint *.es6 src/*.es6 bin/*.js",
+    "build": "babel src/ --out-dir lib/ --source-maps inline",
+    "watch": "parallelshell 'npm run build -- --watch' 'chokidar \"src/*.es6\" -c \"npm run test\"'",
+    "postinstall": "npm run build"
+  },
+  "keywords": [
+    "weather",
+    "yahoo",
+    "jp",
+    "forecast"
+  ],
+  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "chalk": "^1.1.1",
+    "date-utils": "*",
+    "weather-yahoo-jp": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "chokidar-cli": "^1.2.0",
+    "eslint": "^1.10.3",
+    "parallelshell": "^2.0.0"
+  }
+}
