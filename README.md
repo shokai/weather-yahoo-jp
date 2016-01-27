@@ -16,6 +16,24 @@ in `./packages/`
 ## Develop
 
     % npm install
-    % npm bootstrap
-    % npm build
+    % npm run bootstrap
+    % npm run build
+    % npm run watch
+
+
+### Test
+[Register Your App](https://e.developer.yahoo.co.jp/register) to get APPID
+
+    % export YAHOO_APPID=a1b2cdef3456jkluiop
     % npm test
+    % DEBUG=weather* npm test
+
+
+### Build forecast-url.json
+
+    % npm run build:urllist
+
+
+## Note
+
+- [橋本商会 » Node.jsでYahooから天気予報とリアルタイム降雨データを取得する](http://shokai.org/blog/archives/10542)

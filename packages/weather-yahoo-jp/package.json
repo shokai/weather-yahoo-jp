@@ -8,9 +8,6 @@
     "node": ">= 5.4",
     "npm": "3.x"
   },
-  "scripts": {
-    "build:urllist": "babel-node tool/create-forecast-url-list.es6 forecast-url.json"
-  },
   "keywords": [
     "weather",
     "forecast",
@@ -23,11 +20,6 @@
     "debug": "*",
     "lodash": "^4.0.0",
     "superagent": "*"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.4.0",
-    "bluebird": "^3.1.1",
-    "co": "^4.6.0"
   },
   "directories": {
     "test": "test"

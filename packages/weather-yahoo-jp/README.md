@@ -110,23 +110,3 @@ yolp.getWeather(query)
 沖縄は雨が1.65降っています
 新潟は雨が降っていません
 ```
-
-
-## Develop
-
-    % npm i
-    % npm run build
-    % npm run watch
-
-### Test
-
-    % npm test
-    % DEBUG=weather* npm test
-
-### Build forecast-url.json
-
-    % npm run build:urllist
-
-## Note
-
-- [橋本商会 » Node.jsでYahooから天気予報とリアルタイム降雨データを取得する](http://shokai.org/blog/archives/10542)
