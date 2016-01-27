@@ -7,5 +7,6 @@ dependencies:
     - bin/run-each-packages npm i
 test:
   override:
+    - npm run bootstrap
     - npm run build
     - npm run test
