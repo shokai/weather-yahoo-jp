@@ -4,9 +4,8 @@ machine:
 dependencies:
   override:
     - npm i
-    - bin/run-each-packages npm i
+    - npm run bootstrap
 test:
   override:
-    - npm run bootstrap
     - npm run build
     - npm run test

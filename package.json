@@ -8,7 +8,7 @@
   "scripts": {
     "test": "./bin/run-each-packages npm run test",
     "build": "./bin/run-each-packages npm run build",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "./bin/run-each-packages npm i && lerna bootstrap"
   },
   "repository": {
     "type": "git",
