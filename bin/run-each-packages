@@ -3,7 +3,7 @@
 
 var path = require("path");
 var fs = require("fs");
-var exec = require("child_process").exec;
+var spawn = require("child_process").spawn;
 var async = require("async");
 
 var pkgs = fs.readdirSync(path.resolve(__dirname + "/../packages/"));
@@ -24,11 +24,12 @@ if(cmd.length < 1) process.exit(0);
 each(pkgs, function(pkg, next){
 
   var pkgdir = path.resolve(__dirname + "/../packages", pkg);
-  var _exec = exec(cmd, {cwd: pkgdir}, next);
-  _exec.stdout.on("data", function(data){
-    console.log("=== " + pkgdir + " ===");
-    process.stdout.write(data);
-  });
+  var _spawn = spawn("sh", ["-c", cmd], {
+    cwd: pkgdir,
+    stdio: ['pipe', process.stdout, process.stderr],
+    env: process.env
+  })
+  _spawn.on("close", next);
 
 }, function(err, res){
   if(err) console.error(err);
