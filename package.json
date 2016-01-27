@@ -3,7 +3,7 @@
   "name": "weather-yahoo-jp",
   "scripts": {
     "bootstrap": "./bin/run-each-packages npm i && lerna bootstrap",
-    "mocha": "mocha packages/*/test/*.es6 --compilers js:babel-register",
+    "mocha": "mocha packages/*/*/test_*.es6 --compilers js:babel-register",
     "eslint": "eslint packages/*/*/*.es6",
     "test": "npm run eslint && npm run mocha",
     "build": "./bin/run-each-packages babel src/ --out-dir lib/ --source-maps inline"
