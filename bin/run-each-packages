@@ -7,20 +7,26 @@ var exec = require("child_process").exec;
 var async = require("async");
 
 var pkgs = fs.readdirSync(path.resolve(__dirname + "/../packages/"));
+var each = async.eachSeries;
 
-var cmd = process.argv.slice(2).join(' ');
+var args = process.argv.slice(2);
+if(args[0] === "--parallel"){
+  each = async.each;
+  args.shift();
+}
+var cmd = args.join(' ');
 
 console.log("command:  " + cmd);
 console.log("packages: " + JSON.stringify(pkgs));
 
 if(cmd.length < 1) process.exit(0);
 
-async.eachSeries(pkgs, function(pkg, next){
+each(pkgs, function(pkg, next){
 
   var pkgdir = path.resolve(__dirname + "/../packages", pkg);
-  console.log("=== " + pkgdir + " ===");
   var _exec = exec(cmd, {cwd: pkgdir}, next);
   _exec.stdout.on("data", function(data){
+    console.log("=== " + pkgdir + " ===");
     process.stdout.write(data);
   });
 

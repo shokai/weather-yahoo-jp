@@ -6,7 +6,8 @@
     "mocha": "mocha packages/*/*/test_*.es6 --compilers js:babel-register",
     "eslint": "eslint packages/*/*/*.es6",
     "test": "npm run eslint && npm run mocha",
-    "build": "./bin/run-each-packages babel src/ --out-dir lib/ --source-maps inline"
+    "build": "./bin/run-each-packages --parallel babel src/ --out-dir lib/ --source-maps inline",
+    "watch": "npm run build -- --watch"
   },
   "repository": {
     "type": "git",
