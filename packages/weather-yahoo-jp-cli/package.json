@@ -1,6 +1,6 @@
 {
   "name": "weather-yahoo-jp-cli",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": false,
   "description": "CLI tool for weather-yahoo-jp",
   "engines": {
@@ -11,8 +11,7 @@
   "bin": {
     "weather-yahoo-jp": "bin/cli.js"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "weather",
     "yahoo",
@@ -24,7 +23,7 @@
   "dependencies": {
     "chalk": "^1.1.1",
     "date-utils": "*",
-    "weather-yahoo-jp": "^0.2.4"
+    "weather-yahoo-jp": "^0.2.5"
   },
   "repository": {
     "type": "git",
