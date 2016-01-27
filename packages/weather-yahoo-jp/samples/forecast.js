@@ -1,9 +1,7 @@
 "use strict";
 
 // var forecast = require("weather-yahoo-jp").forecast;
-
-var path = require("path");
-var forecast = require(path.resolve()).forecast;
+var forecast = require("../").forecast;
 
 var where = process.argv[2] || "横浜";
 

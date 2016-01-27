@@ -1,9 +1,7 @@
 "use strict";
 
 // var Yolp = require("weather-yahoo-jp").Yolp;
-
-var path = require("path");
-var Yolp = require(path.resolve()).Yolp;
+var Yolp = require("../").Yolp;
 
 var yolp = new Yolp(process.env.YAHOO_APPID);
 
