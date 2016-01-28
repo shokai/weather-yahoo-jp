@@ -36,7 +36,7 @@ export function temperatureString(temp){
     str += chalk.bold.red(`[+${temp.lowDiff}]`);
   }
   else if(temp.lowDiff < 0){
-    str += chalk.bold.blue(`[${temp.lowDiff}}]`);
+    str += chalk.bold.blue(`[${temp.lowDiff}]`);
   }
   else if(temp.lowDiff === 0){
     str += "[+-0]";
