@@ -2,6 +2,9 @@ machine:
   node:
     version: 5.4
 dependencies:
+  cache_directories:
+    - packages/weather-yahoo-jp/node_modules
+    - packages/weather-yahoo-jp-cli/node_modules
   override:
     - npm i
     - npm run bootstrap
