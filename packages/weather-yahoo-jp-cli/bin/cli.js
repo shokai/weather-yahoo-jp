@@ -3,4 +3,4 @@
 "use strict";
 
 var handler = require("../lib/main").handler;
-handler();
+handler(process.argv.slice(2));
