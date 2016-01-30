@@ -16,10 +16,10 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.9.1",
     "cheerio": "*",
     "debug": "*",
-    "lodash": "^4.0.0",
-    "superagent": "*"
+    "lodash": "^4.0.0"
   },
   "directories": {
     "test": "test"

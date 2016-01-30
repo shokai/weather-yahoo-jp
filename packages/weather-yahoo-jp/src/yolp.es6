@@ -1,7 +1,7 @@
 "use strict";
 
 const debug = require("debug")("weather-yahoo-jp:yolp");
-import superagent from "superagent";
+import axios from "axios";
 import _ from "lodash";
 import util from "./util";
 
@@ -17,28 +17,22 @@ export default class Yolp{
   }
 
   get(params){
-    return new Promise((resolve, reject) =>{
-      if(typeof params !== "object") return reject("params required");
-      for(let k in this.defaultParams){
-        if(!params.hasOwnProperty(k)) params[k] = this.defaultParams[k];
-      }
-      if(!params.coordinates) return reject("param \"coordinates\" required");
-      if(!params.appid) params.appid = this.appid;
-      const coordinates = params.coordinates;
-      delete params.coordinates;
-      debug(coordinates);
-      superagent
-        .get("http://weather.olp.yahooapis.jp/v1/place")
-        .query(params)
-        .query(
-          "coordinates=" + _.values(coordinates).join(encodeURI(' '))
-        )
-        .end((err, res) => {
-          if(err) return reject(err);
-          debug(res.body.ResultInfo);
-          return resolve(res.body);
-        })
-    });
+    if(typeof params !== "object") return Promise.reject("params required");
+    for(let k in this.defaultParams){
+      if(!params.hasOwnProperty(k)) params[k] = this.defaultParams[k];
+    }
+    if(!params.coordinates) return Promise.reject('param "coordinates" is missing');
+    if(!params.appid) params.appid = this.appid;
+    const coordinates = _.values(params.coordinates).join(encodeURI(' '));
+    delete params.coordinates
+    return axios({
+      method: "get",
+      url: `http://weather.olp.yahooapis.jp/v1/place?coordinates=${coordinates}`,
+      params: params
+      }).then((res) => {
+        debug(res.data.ResultInfo);
+        return res.data;
+      })
   }
 
   getWeather(params){

@@ -1,7 +1,7 @@
 "use strict";
 
 const debug = require("debug")("weather-yahoo-jp:forecast");
-import superagent from "superagent";
+import axios from "axios";
 import cheerio from "cheerio";
 import _ from "lodash";
 
@@ -32,15 +32,12 @@ export default class Forecast{
   }
 
   getHtml(url){
-    return new Promise((resolve, reject) => {
-      debug(`get ${url}`);
-      superagent
-        .get(url)
-        .end((err, res) => {
-          if(err) return reject(err);
-          return resolve(res.text);
-        });
-    });
+    debug(`get ${url}`);
+    return axios
+      .get(url)
+      .then((res) => {
+        return res.data;
+      });
   }
 
   parse(html){

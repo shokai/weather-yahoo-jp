@@ -1,15 +1,12 @@
 // create forecast URL list
 
 "use strict";
-
-import Promise from "bluebird";
+import fs from "fs";
 import {forecast} from "../src/"
 import co from "co";
 import cheerio from "cheerio";
-import superagent from "superagent";
+import axios from "axios";
 import _ from "lodash";
-
-const fs = Promise.promisifyAll(require("fs"));
 
 const fname = process.argv[2] || "forecast-url.json";
 console.log(`output file => ${fname}`);
@@ -38,7 +35,7 @@ co(function *(){
   }
   console.log(Object.keys(result).length + " forecast URLs found");
   console.log(`writing ${fname}`);
-  yield fs.writeFile(fname, JSON.stringify(result, null, 2));
+  fs.writeFileSync(fname, JSON.stringify(result, null, 2));
   console.log("done");
 }).catch((err) => {
   console.error(err.stack || err);
@@ -53,21 +50,9 @@ function delay(msec){
   });
 }
 
-function getPage(url){
-  console.log(`get ${url}`);
-  return new Promise((resolve, reject) => {
-    superagent
-      .get(url)
-      .end((err, res) => {
-        if(err) return reject(err);
-        return resolve(res.text);
-      });
-  });
-}
-
 function getLinksInMap(url){
   return co(function *(){
-    var html = yield getPage(url);
+    var html = (yield axios.get(url)).data;
     var $ = cheerio.load(html);
     var links = $(".point a").map(function(i, el){
       return fullpath($(el).attr("href"));
