@@ -1,6 +1,6 @@
 {
   "name": "weather-yahoo-jp",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "private": false,
   "description": "get weather info from yahoo.co.jp",
   "main": "lib/index.js",
