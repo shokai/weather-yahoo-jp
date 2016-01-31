@@ -1,5 +1,7 @@
 // create forecast URL list
 
+/* eslint no-console: 0 */
+
 "use strict";
 import fs from "fs";
 import {forecast} from "../src/"
