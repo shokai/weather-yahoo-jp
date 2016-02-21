@@ -36,6 +36,7 @@ describe("yolp", function(){
             let weather = data[where];
             assert.isNumber(weather.geo.latitude);
             assert.isNumber(weather.geo.longitude);
+            assert.match(weather.map, /^https?:\/\/map\.olp\.yahooapis\.jp.+/);
             assert.isNumber(weather.observation.rain); // observation
             assert.instanceOf(weather.observation.date, Date);
             assert.isArray(weather.forecast); // forecast

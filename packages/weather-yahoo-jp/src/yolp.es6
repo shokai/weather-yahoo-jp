@@ -18,9 +18,7 @@ export default class Yolp{
 
   get(params){
     if(typeof params !== "object") return Promise.reject("params required");
-    for(let k in this.defaultParams){
-      if(!params.hasOwnProperty(k)) params[k] = this.defaultParams[k];
-    }
+    params = _.assign(params, this.defaultParams);
     if(!params.coordinates) return Promise.reject('param "coordinates" is missing');
     if(!params.appid) params.appid = this.appid;
     const coordinates = _.values(params.coordinates).join(encodeURI(' '));
@@ -36,6 +34,9 @@ export default class Yolp{
   }
 
   getWeather(params){
+    if(typeof params !== "object") return Promise.reject("params required");
+    const mapParams = params.map;
+    delete params.map;
     const coordinates = params.coordinates;
     return this.get(params)
       .then((res) => {
@@ -59,6 +60,7 @@ export default class Yolp{
               latitude: lat,
               longitude: lon
             },
+            map: this.getMap(_.assign({lat: lat, lon: lon, z: 10, overlay: "type:rainfall"}, mapParams)),
             observation: {
               rain: observation.Rainfall,
               date: util.parseDateString(observation.Date)},
@@ -77,5 +79,12 @@ export default class Yolp{
         }
         return result;
       });
+  }
+
+  // http://developer.yahoo.co.jp/webapi/map/openlocalplatform/v1/static.html
+  getMap(params){
+    if(!params.appid) params.appid = this.appid;
+    const query = Object.keys(params).map(k => { return `${k}=${params[k]}` }).join('&');
+    return `http://map.olp.yahooapis.jp/OpenLocalPlatform/V1/static?${query}`
   }
 }

@@ -97,6 +97,7 @@ yolp.getWeather(query)
           console.log(where + "でもうすぐ雨が" + w.forecast[0].rain + "降ります");
         }
       }
+      console.log(w.map); // Map image URL
     }
   })
   .catch(function(err){

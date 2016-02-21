@@ -7,7 +7,6 @@ import {assert} from "chai";
 assert.isForecast = function(forecast){
   assert.isString(forecast.where);
   assert.match(forecast.url, /^https?:\/\/weather\.yahoo\.co\.jp.+/);
-  assert.isString(forecast.where);
 
   assert.isString(forecast.today.text);
   assert.isNumber(forecast.today.temperature.high);
