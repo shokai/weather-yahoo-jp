@@ -1,5 +1,3 @@
-"use strict";
-
 const debug = require("debug")("weather-yahoo-jp:forecast");
 import axios from "axios";
 import cheerio from "cheerio";

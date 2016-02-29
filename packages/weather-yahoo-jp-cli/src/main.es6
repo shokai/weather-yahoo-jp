@@ -1,7 +1,5 @@
 /* eslint no-console: 0 */
 
-"use strict";
-
 import pkg from "../package.json";
 import {temperatureString} from "./util";
 import {forecast} from "weather-yahoo-jp";

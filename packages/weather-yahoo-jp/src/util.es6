@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   parseDateString: function(dateString){
     if(!(/^\d{12}$/.test(dateString))) return null;

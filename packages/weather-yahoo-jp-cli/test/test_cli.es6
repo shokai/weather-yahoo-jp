@@ -1,7 +1,5 @@
 /* global describe it */
 
-"use strict";
-
 import "./test_helper";
 import "mocha";
 import {assert} from "chai";

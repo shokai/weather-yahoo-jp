@@ -1,8 +1,8 @@
 // create forecast URL list
 
 /* eslint no-console: 0 */
+/* global Promise */
 
-"use strict";
 import fs from "fs";
 import {forecast} from "../src/"
 import co from "co";

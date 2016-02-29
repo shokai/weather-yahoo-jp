@@ -1,4 +1,4 @@
-"use strict";
+/* global Promise */
 
 const debug = require("debug")("weather-yahoo-jp:yolp");
 import axios from "axios";

@@ -1,5 +1,3 @@
-"use strict";
-
 import "date-utils";
 import chalk from "chalk";
 
