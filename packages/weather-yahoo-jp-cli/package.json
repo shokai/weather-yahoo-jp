@@ -3,10 +3,6 @@
   "version": "0.4.1",
   "private": false,
   "description": "CLI tool for weather-yahoo-jp",
-  "engines": {
-    "node": ">= 5.4",
-    "npm": "3.x"
-  },
   "main": "lib/main.js",
   "bin": {
     "weather-yahoo-jp": "bin/cli.js"
