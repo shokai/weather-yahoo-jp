@@ -12,6 +12,7 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "scripts": {
+    "standard": "standard",
     "mocha": "mocha test/*.js --compilers js:babel-register -r babel-polyfill"
   },
   "dependencies": {
@@ -23,7 +24,8 @@
   },
   "devDependencies": {
     "chai": "^4.1.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "standard": "^10.0.2"
   },
   "directories": {
     "test": "test"
@@ -35,5 +37,10 @@
   "bugs": {
     "url": "https://github.com/shokai/weather-yahoo-jp/issues"
   },
-  "homepage": "https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp#readme"
+  "homepage": "https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp#readme",
+  "standard": {
+    "ignore": [
+      "/lib"
+    ]
+  }
 }
