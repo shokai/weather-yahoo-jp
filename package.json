@@ -5,7 +5,7 @@
     "bootstrap": "lerna-run npm i && lerna bootstrap",
     "mocha": "mocha packages/*/test/*.js --compilers js:babel-register",
     "standard": "standard",
-    "test": "npm run standard && npm run mocha",
+    "test": "npm run mocha && npm run standard",
     "build": "lerna-run --parallel babel src/ --out-dir lib/ --source-maps inline",
     "watch": "npm run build -- --watch",
     "build:urllist": "cd packages/weather-yahoo-jp && babel-node tool/create-forecast-url-list.js forecast-url.json"
