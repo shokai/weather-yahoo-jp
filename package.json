@@ -3,6 +3,7 @@
   "name": "weather-yahoo-jp",
   "scripts": {
     "bootstrap": "lerna-run npm i && lerna bootstrap",
+    "postinstall": "npm run bootstrap",
     "mocha": "lerna-run npm run mocha",
     "standard": "lerna-run npm run standard",
     "test": "npm run mocha && npm run standard",
@@ -23,10 +24,8 @@
   "description": "get weather info from yahoo.co.jp",
   "dependencies": {
     "babel-cli": "^6.24.1",
-    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.24.1",
     "chokidar-cli": "^1.2.0",
     "co": "^4.6.0",
     "lerna": "^1.1.0",
