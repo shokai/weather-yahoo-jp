@@ -2,6 +2,7 @@
   "private": true,
   "name": "weather-yahoo-jp",
   "scripts": {
+    "lerna": "lerna",
     "bootstrap": "lerna-run npm i && lerna bootstrap",
     "postinstall": "npm run bootstrap",
     "mocha": "lerna-run npm run mocha",
