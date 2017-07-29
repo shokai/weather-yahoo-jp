@@ -1,6 +1,5 @@
 /* eslint-env mocha */
 
-import './helper'
 import 'mocha'
 import {assert} from 'chai'
 
