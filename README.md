@@ -16,7 +16,6 @@ in `./packages/`
 ## Develop
 
     % npm install
-    % npm run bootstrap
     % npm run build
     % npm run watch
 

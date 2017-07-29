@@ -7,7 +7,10 @@
   "bin": {
     "weather-yahoo-jp": "bin/cli.js"
   },
-  "scripts": {},
+  "scripts": {
+    "standard": "standard",
+    "mocha": "mocha test/*.js --compilers js:babel-register -r babel-polyfill"
+  },
   "keywords": [
     "weather",
     "yahoo",
@@ -17,9 +20,15 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "chalk": "^1.1.1",
     "date-utils": "*",
     "weather-yahoo-jp": "^0.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "standard": "^10.0.2"
   },
   "repository": {
     "type": "git",
@@ -28,5 +37,10 @@
   "bugs": {
     "url": "https://github.com/shokai/weather-yahoo-jp/issues"
   },
-  "homepage": "https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp-cli#readme"
+  "homepage": "https://github.com/shokai/weather-yahoo-jp/tree/master/packages/weather-yahoo-jp-cli#readme",
+  "standard": {
+    "ignore": [
+      "/lib"
+    ]
+  }
 }
