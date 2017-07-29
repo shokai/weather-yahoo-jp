@@ -1,9 +1,8 @@
-/* global Promise */
-
-const debug = require('debug')('weather-yahoo-jp:yolp')
 import axios from 'axios'
 import _ from 'lodash'
 import util from './util'
+
+const debug = require('debug')('weather-yahoo-jp:yolp')
 
 export default class Yolp {
   constructor (appid) {
