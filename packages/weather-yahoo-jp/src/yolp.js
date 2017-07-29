@@ -1,5 +1,5 @@
 import axios from 'axios'
-import util from './util'
+import {parseDateString} from './util'
 import _ from 'lodash'
 
 const debug = require('debug')('weather-yahoo-jp:yolp')
@@ -59,12 +59,12 @@ export default class Yolp {
         map: this.getMap(Object.assign({lat: lat, lon: lon, z: 10, overlay: 'type:rainfall'}, mapParams)),
         observation: {
           rain: observation.Rainfall,
-          date: util.parseDateString(observation.Date)},
+          date: parseDateString(observation.Date)},
         forecast: weathers
           .filter(i => i.Type === 'forecast')
           .map(i => ({
             rain: i.Rainfall,
-            date: util.parseDateString(i.Date)
+            date: parseDateString(i.Date)
           }))
           .sort((a, b) => a.date > b.date)
       }
