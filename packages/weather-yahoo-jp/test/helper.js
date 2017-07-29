@@ -1,5 +1,3 @@
-process.env.NODE_ENV = 'test'
-
 import {assert} from 'chai'
 
 assert.isForecast = function (forecast) {

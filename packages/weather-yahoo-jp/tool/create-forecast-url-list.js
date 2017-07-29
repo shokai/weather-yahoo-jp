@@ -1,7 +1,6 @@
 // create forecast URL list
 
 /* eslint no-console: 0 */
-/* global Promise */
 
 import fs from 'fs'
 import {forecast} from '../src/'
@@ -66,5 +65,5 @@ function getLinksInMap (url) {
 function fullpath (path) {
   if (/^\//.test(path)) return 'http://weather.yahoo.co.jp' + path
   if (/^https?:\/\/.+/.test(path)) return path
-  throw `cannot get fullpath of ${path}`
+  throw new Error(`cannot get fullpath of ${path}`)
 }

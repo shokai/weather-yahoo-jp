@@ -14,7 +14,7 @@ Array.prototype.__defineGetter__('last', function () {
 })
 
 Array.prototype.__defineSetter__('last', function (val) {
-  return this[this.length - 1] = val
+  this[this.length - 1] = val
 })
 
 export function temperatureString (temp) {

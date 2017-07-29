@@ -6,7 +6,7 @@ const debug = require('debug')('weather-yahoo-jp:yolp')
 
 export default class Yolp {
   constructor (appid) {
-    if (!appid) throw 'appid missing'
+    if (!appid) throw new Error('Yahoo APP_ID missing')
     this.appid = appid
     this.defaultParams = Object.freeze({
       output: 'json'

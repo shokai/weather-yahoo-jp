@@ -12,13 +12,13 @@ function findForecastUrl (name) {
   where = _.maxBy(Object.keys(forecastUrl), (where) => {
     return where.indexOf(name)
   })
-  if (where.indexOf(name) < 0) throw `forecast URL for "${name}" not exists`
+  if (where.indexOf(name) < 0) throw new Error(`forecast URL for "${name}" not exists`)
   return forecastUrl[where]
 }
 
 export default class Forecast {
-  get (url_or_name) {
-    var url = /^https?:\/\/.+/.test(url_or_name) ? url_or_name : findForecastUrl(url_or_name)
+  get (urlOrName) {
+    var url = /^https?:\/\/.+/.test(urlOrName) ? urlOrName : findForecastUrl(urlOrName)
     return this.getHtml(url)
       .then(this.parse)
       .then((data) => {
