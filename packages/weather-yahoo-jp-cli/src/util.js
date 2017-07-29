@@ -1,3 +1,5 @@
+/* eslint no-extend-native: 0 */
+
 import 'date-utils'
 import chalk from 'chalk'
 
