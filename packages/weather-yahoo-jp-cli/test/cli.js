@@ -1,6 +1,6 @@
 /* global describe it */
 
-import "./test_helper";
+import "./helper";
 import "mocha";
 import {assert} from "chai";
 

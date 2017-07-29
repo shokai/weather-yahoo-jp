@@ -3,12 +3,12 @@
   "name": "weather-yahoo-jp",
   "scripts": {
     "bootstrap": "lerna-run npm i && lerna bootstrap",
-    "mocha": "mocha packages/*/*/test_*.es6 --compilers js:babel-register",
+    "mocha": "mocha packages/*/test/*.js --compilers js:babel-register",
     "standard": "standard",
     "test": "npm run standard && npm run mocha",
     "build": "lerna-run --parallel babel src/ --out-dir lib/ --source-maps inline",
     "watch": "npm run build -- --watch",
-    "build:urllist": "cd packages/weather-yahoo-jp && babel-node tool/create-forecast-url-list.es6 forecast-url.json"
+    "build:urllist": "cd packages/weather-yahoo-jp && babel-node tool/create-forecast-url-list.js forecast-url.json"
   },
   "repository": {
     "type": "git",
