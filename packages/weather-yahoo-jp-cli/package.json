@@ -17,6 +17,7 @@
   "author": "Sho Hashimoto <hashimoto@shokai.org>",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "chalk": "^1.1.1",
     "date-utils": "*",
     "weather-yahoo-jp": "^0.5.0"
