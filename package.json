@@ -3,7 +3,7 @@
   "name": "weather-yahoo-jp",
   "scripts": {
     "bootstrap": "lerna-run npm i && lerna bootstrap",
-    "mocha": "mocha packages/*/test/*.js --compilers js:babel-register -r babel-polyfill",
+    "mocha": "lerna-run npm run mocha",
     "standard": "standard",
     "test": "npm run mocha && npm run standard",
     "build": "lerna-run --parallel babel src/ --out-dir lib/ --source-maps inline",
